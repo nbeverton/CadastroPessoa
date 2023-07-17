@@ -46,4 +46,7 @@ public class DAO<E> {
         return this.abrirTransacao().incluir(entidade).fecharTransacao();
     }
 
+    public void fechar(){
+        em.close();
+    }
 }
