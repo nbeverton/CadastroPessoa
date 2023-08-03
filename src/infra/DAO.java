@@ -1,5 +1,7 @@
 package infra;
 
+import modelo.Pessoa;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -38,6 +40,14 @@ public class DAO<E> {
 
     public DAO<E> incluir(E entidade){
         em.persist(entidade);
+        return this;
+    }
+
+    public DAO<E> remover(Long id){
+        E entidade = em.find(classe, id);
+        if (entidade != null){
+        em.remove(entidade);
+        }
         return this;
     }
 

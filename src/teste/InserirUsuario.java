@@ -8,7 +8,7 @@ import modelo.Pessoa;
 public class InserirUsuario {
     public static void main(String[] args) {
 
-        Pessoa usuario = new Pessoa("Ana", "Rua ABC", 1234.5678);
+        Pessoa usuario = new Pessoa("Bruno", "Rua CDE", 1234.5678);
 
         DAO<Pessoa> dao = new DAO<>(Pessoa.class);
         dao.abrirTransacao().incluir(usuario).fecharTransacao().fechar();

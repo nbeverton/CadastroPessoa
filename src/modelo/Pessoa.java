@@ -25,6 +25,11 @@ public class Pessoa {
         this.telefone = telefone;
     }
 
+    public Pessoa(Long id){
+        super();
+        this.id = id;
+    }
+
     public Long getId() {
         return id;
     }
