@@ -51,6 +51,11 @@ public class DAO<E> {
         return this;
     }
 
+    public E consultarPorId(Long id){
+        E entidade = em.find(classe, id);
+        return entidade;
+    }
+
     //Método para processamento de todos os comandos:
     public DAO<E> incluirAtomico(E entidade) {
         return this.abrirTransacao().incluir(entidade).fecharTransacao();
